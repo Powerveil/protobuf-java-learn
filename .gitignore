@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .git
 logs
 rebel.xml
@@ -8,12 +9,30 @@ log.path_IS_UNDEFINED
 offline_user.md
 
 ### STS ###
+=======
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Eclipse ###
+>>>>>>> 449c1ab (第一次提交)
 .apt_generated
 .classpath
 .factorypath
 .project
 .settings
 .springBeans
+<<<<<<< HEAD
 
 ### IntelliJ IDEA ###
 .idea
@@ -36,3 +55,22 @@ third-party/nacos/data/
 third-party/nacos/work/
 
 file/
+=======
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+>>>>>>> 449c1ab (第一次提交)
