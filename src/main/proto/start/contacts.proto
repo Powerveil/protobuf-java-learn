@@ -1,0 +1,7 @@
+// 首行：语法指定行
+syntax = "proto3";
+package start;
+
+option java_multiple_files = true;
+option java_package = "com.power.start";
+option java_outer_classname = "ContactsProtos";
