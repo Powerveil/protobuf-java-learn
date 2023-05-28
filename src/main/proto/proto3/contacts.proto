@@ -1,0 +1,68 @@
+// 首行：语法指定行
+syntax = "proto3";
+package proto3;
+
+option java_multiple_files = true;
+option java_package = "com.power.proto3";
+option java_outer_classname = "ContactsProtos";
+
+
+// 定义联系人 message
+
+message PeopleInfo {
+  string name = 1;
+  int32 age = 2;
+
+  message Phone {
+    string number = 1;
+  }
+
+  repeated Phone phone = 3;
+}
+
+message Contacts {
+  repeated PeopleInfo contacts = 1;
+}
+
+
+
+
+//
+//// 首行：语法指定行
+//syntax = "proto3";
+//package proto3;
+//
+//option java_multiple_files = true;
+//option java_package = "com.power.proto3";
+//option java_outer_classname = "ContactsProtos";
+//
+//// 使用插件注意的注意点
+//// 1. 不能使用相对路径
+//// 2. 应该导入 protoSourceRoot 设置的路径开始设置
+//import "proto3/phone.proto";
+//
+//// 定义联系人 message
+//
+//message PeopleInfo {
+//  string name = 1;
+//  int32 age = 2;
+//
+//  repeated proto.Phone phone = 3;
+//}
+//
+//
+//
+//// proto3包下的 phone.protr
+//
+//// 首行：语法指定行
+//syntax = "proto3";
+//package proto;
+//
+//option java_multiple_files = true;
+//option java_package = "com.power.proto3";
+//option java_outer_classname = "PhoneProtos";
+//
+//
+//message Phone {
+//  string number = 1;
+//}
