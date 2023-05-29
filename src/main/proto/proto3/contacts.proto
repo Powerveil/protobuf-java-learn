@@ -15,6 +15,14 @@ message PeopleInfo {
 
   message Phone {
     string number = 1;
+    // 0值必须存在，且作为第一个枚举常量的值
+    // 枚举值范围：32位整数范围，不要设置负数
+    enum PhoneType {
+      MP = 0; // 移动电话
+      TEL = 1; // 固定电话
+    }
+
+    PhoneType type = 2;
   }
 
   repeated Phone phone = 3;

@@ -17,9 +17,9 @@ public class TestRead {
 
 
         // 打印
-//        printContacts(contacts);
+        printContacts(contacts);
 
-        System.out.println(contacts.toString());
+//        System.out.println(contacts.toString());
     }
 
     private static void printContacts(Contacts contacts) {
@@ -31,7 +31,8 @@ public class TestRead {
             int j = 1;
 
             for (PeopleInfo.Phone phone : peopleInfo.getPhoneList()) {
-                System.out.println("电话" + j++ + "："+  phone.getNumber());
+                System.out.println("电话" + j++ + "："+  phone.getNumber()
+                    + " (" + phone.getType().name() + ")");
             }
         }
 

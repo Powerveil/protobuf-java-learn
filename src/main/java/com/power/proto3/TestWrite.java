@@ -63,6 +63,20 @@ public class TestWrite {
 
             PeopleInfo.Phone.Builder phoneBuilder = PeopleInfo.Phone.newBuilder();
             phoneBuilder.setNumber(phoneNumber);
+
+            System.out.print("请输入此电话类型<1、移动电话    2、固定电话>：");
+            int tpye = Integer.parseInt(scanner.nextLine());
+            switch (tpye) {
+                case 1:
+                    phoneBuilder.setType(PeopleInfo.Phone.PhoneType.MP);
+                    break;
+                case 2:
+                    phoneBuilder.setType(PeopleInfo.Phone.PhoneType.TEL);
+                    break;
+                default:
+                    System.out.println("选择错误");
+            }
+
             builder.addPhone(phoneBuilder);
 //            builder.setPhone(i, PeopleInfo.Phone.newBuilder().setNumber(phone));
         }

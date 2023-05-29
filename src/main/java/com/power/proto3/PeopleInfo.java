@@ -60,6 +60,17 @@ private static final long serialVersionUID = 0L;
      */
     com.google.protobuf.ByteString
         getNumberBytes();
+
+    /**
+     * <code>.proto3.PeopleInfo.Phone.PhoneType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <code>.proto3.PeopleInfo.Phone.PhoneType type = 2;</code>
+     * @return The type.
+     */
+    com.power.proto3.PeopleInfo.Phone.PhoneType getType();
   }
   /**
    * Protobuf type {@code proto3.PeopleInfo.Phone}
@@ -75,6 +86,7 @@ private static final long serialVersionUID = 0L;
     }
     private Phone() {
       number_ = "";
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -100,6 +112,135 @@ private static final long serialVersionUID = 0L;
       return com.power.proto3.ContactsProtos.internal_static_proto3_PeopleInfo_Phone_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.power.proto3.PeopleInfo.Phone.class, com.power.proto3.PeopleInfo.Phone.Builder.class);
+    }
+
+    /**
+     * <pre>
+     * 0值必须存在，且作为第一个枚举常量的值
+     * 枚举值范围：32位整数范围，不要设置负数
+     * </pre>
+     *
+     * Protobuf enum {@code proto3.PeopleInfo.Phone.PhoneType}
+     */
+    public enum PhoneType
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <pre>
+       * 移动电话
+       * </pre>
+       *
+       * <code>MP = 0;</code>
+       */
+      MP(0),
+      /**
+       * <pre>
+       * 固定电话
+       * </pre>
+       *
+       * <code>TEL = 1;</code>
+       */
+      TEL(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       * <pre>
+       * 移动电话
+       * </pre>
+       *
+       * <code>MP = 0;</code>
+       */
+      public static final int MP_VALUE = 0;
+      /**
+       * <pre>
+       * 固定电话
+       * </pre>
+       *
+       * <code>TEL = 1;</code>
+       */
+      public static final int TEL_VALUE = 1;
+
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static PhoneType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static PhoneType forNumber(int value) {
+        switch (value) {
+          case 0: return MP;
+          case 1: return TEL;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<PhoneType>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static final com.google.protobuf.Internal.EnumLiteMap<
+          PhoneType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<PhoneType>() {
+              public PhoneType findValueByNumber(int number) {
+                return PhoneType.forNumber(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.power.proto3.PeopleInfo.Phone.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final PhoneType[] VALUES = values();
+
+      public static PhoneType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private PhoneType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:proto3.PeopleInfo.Phone.PhoneType)
     }
 
     public static final int NUMBER_FIELD_NUMBER = 1;
@@ -141,6 +282,24 @@ private static final long serialVersionUID = 0L;
       }
     }
 
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_ = 0;
+    /**
+     * <code>.proto3.PeopleInfo.Phone.PhoneType type = 2;</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.proto3.PeopleInfo.Phone.PhoneType type = 2;</code>
+     * @return The type.
+     */
+    @java.lang.Override public com.power.proto3.PeopleInfo.Phone.PhoneType getType() {
+      com.power.proto3.PeopleInfo.Phone.PhoneType result = com.power.proto3.PeopleInfo.Phone.PhoneType.forNumber(type_);
+      return result == null ? com.power.proto3.PeopleInfo.Phone.PhoneType.UNRECOGNIZED : result;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -158,6 +317,9 @@ private static final long serialVersionUID = 0L;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, number_);
       }
+      if (type_ != com.power.proto3.PeopleInfo.Phone.PhoneType.MP.getNumber()) {
+        output.writeEnum(2, type_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -169,6 +331,10 @@ private static final long serialVersionUID = 0L;
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(number_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, number_);
+      }
+      if (type_ != com.power.proto3.PeopleInfo.Phone.PhoneType.MP.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, type_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -187,6 +353,7 @@ private static final long serialVersionUID = 0L;
 
       if (!getNumber()
           .equals(other.getNumber())) return false;
+      if (type_ != other.type_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -200,6 +367,8 @@ private static final long serialVersionUID = 0L;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NUMBER_FIELD_NUMBER;
       hash = (53 * hash) + getNumber().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -330,6 +499,7 @@ private static final long serialVersionUID = 0L;
         super.clear();
         bitField0_ = 0;
         number_ = "";
+        type_ = 0;
         return this;
       }
 
@@ -365,6 +535,9 @@ private static final long serialVersionUID = 0L;
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.number_ = number_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
         }
       }
 
@@ -417,6 +590,9 @@ private static final long serialVersionUID = 0L;
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -448,6 +624,11 @@ private static final long serialVersionUID = 0L;
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+              case 16: {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -533,6 +714,59 @@ private static final long serialVersionUID = 0L;
         checkByteStringIsUtf8(value);
         number_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>.proto3.PeopleInfo.Phone.PhoneType type = 2;</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.proto3.PeopleInfo.Phone.PhoneType type = 2;</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto3.PeopleInfo.Phone.PhoneType type = 2;</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public com.power.proto3.PeopleInfo.Phone.PhoneType getType() {
+        com.power.proto3.PeopleInfo.Phone.PhoneType result = com.power.proto3.PeopleInfo.Phone.PhoneType.forNumber(type_);
+        return result == null ? com.power.proto3.PeopleInfo.Phone.PhoneType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.proto3.PeopleInfo.Phone.PhoneType type = 2;</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(com.power.proto3.PeopleInfo.Phone.PhoneType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.proto3.PeopleInfo.Phone.PhoneType type = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        type_ = 0;
         onChanged();
         return this;
       }
