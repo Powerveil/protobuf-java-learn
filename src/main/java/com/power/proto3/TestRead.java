@@ -33,8 +33,8 @@ public class TestRead {
             int j = 1;
 
             for (PeopleInfo.Phone phone : peopleInfo.getPhoneList()) {
-                System.out.println("电话" + j++ + "："+  phone.getNumber()
-                    + " (" + phone.getType().name() + ")");
+                System.out.println("电话" + j++ + "：" + phone.getNumber()
+                        + " (" + phone.getType().name() + ")");
             }
 
 
@@ -48,6 +48,27 @@ public class TestRead {
                     System.out.println("单位地址：" + address.getUnitAddress());
                 }
             }
+
+
+//            if (peopleInfo.hasQq()) {
+//                System.out.println();
+//            } else if (peopleInfo.hasWechat()) {
+//                System.out.println();
+//            } else {
+//                System.out.println();
+//            }
+
+            switch (peopleInfo.getOtherContactCase()) {
+                case QQ:
+                    System.out.println("qq号：" + peopleInfo.getQq());
+                    break;
+                case WECHAT:
+                    System.out.println("微信号：" + peopleInfo.getWechat());
+                    break;
+                case OTHERCONTACT_NOT_SET:
+                    break;
+            }
+
         }
 
     }

@@ -834,6 +834,47 @@ private static final long serialVersionUID = 0L;
 
   }
 
+  private int otherContactCase_ = 0;
+  private java.lang.Object otherContact_;
+  public enum OtherContactCase
+      implements com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    QQ(5),
+    WECHAT(6),
+    OTHERCONTACT_NOT_SET(0);
+    private final int value;
+    private OtherContactCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static OtherContactCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static OtherContactCase forNumber(int value) {
+      switch (value) {
+        case 5: return QQ;
+        case 6: return WECHAT;
+        case 0: return OTHERCONTACT_NOT_SET;
+        default: return null;
+      }
+    }
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public OtherContactCase
+  getOtherContactCase() {
+    return OtherContactCase.forNumber(
+        otherContactCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
   @SuppressWarnings("serial")
   private volatile java.lang.Object name_ = "";
@@ -951,6 +992,122 @@ private static final long serialVersionUID = 0L;
     return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
   }
 
+  public static final int QQ_FIELD_NUMBER = 5;
+  /**
+   * <pre>
+   *    repeated string qq = 5;
+   * </pre>
+   *
+   * <code>string qq = 5;</code>
+   * @return Whether the qq field is set.
+   */
+  public boolean hasQq() {
+    return otherContactCase_ == 5;
+  }
+  /**
+   * <pre>
+   *    repeated string qq = 5;
+   * </pre>
+   *
+   * <code>string qq = 5;</code>
+   * @return The qq.
+   */
+  public java.lang.String getQq() {
+    java.lang.Object ref = "";
+    if (otherContactCase_ == 5) {
+      ref = otherContact_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (otherContactCase_ == 5) {
+        otherContact_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   *    repeated string qq = 5;
+   * </pre>
+   *
+   * <code>string qq = 5;</code>
+   * @return The bytes for qq.
+   */
+  public com.google.protobuf.ByteString
+      getQqBytes() {
+    java.lang.Object ref = "";
+    if (otherContactCase_ == 5) {
+      ref = otherContact_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (otherContactCase_ == 5) {
+        otherContact_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int WECHAT_FIELD_NUMBER = 6;
+  /**
+   * <code>string wechat = 6;</code>
+   * @return Whether the wechat field is set.
+   */
+  public boolean hasWechat() {
+    return otherContactCase_ == 6;
+  }
+  /**
+   * <code>string wechat = 6;</code>
+   * @return The wechat.
+   */
+  public java.lang.String getWechat() {
+    java.lang.Object ref = "";
+    if (otherContactCase_ == 6) {
+      ref = otherContact_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (otherContactCase_ == 6) {
+        otherContact_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   * <code>string wechat = 6;</code>
+   * @return The bytes for wechat.
+   */
+  public com.google.protobuf.ByteString
+      getWechatBytes() {
+    java.lang.Object ref = "";
+    if (otherContactCase_ == 6) {
+      ref = otherContact_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      if (otherContactCase_ == 6) {
+        otherContact_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -977,6 +1134,12 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       output.writeMessage(4, getData());
     }
+    if (otherContactCase_ == 5) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, otherContact_);
+    }
+    if (otherContactCase_ == 6) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, otherContact_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1000,6 +1163,12 @@ private static final long serialVersionUID = 0L;
     if (data_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getData());
+    }
+    if (otherContactCase_ == 5) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, otherContact_);
+    }
+    if (otherContactCase_ == 6) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, otherContact_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1027,6 +1196,19 @@ private static final long serialVersionUID = 0L;
       if (!getData()
           .equals(other.getData())) return false;
     }
+    if (!getOtherContactCase().equals(other.getOtherContactCase())) return false;
+    switch (otherContactCase_) {
+      case 5:
+        if (!getQq()
+            .equals(other.getQq())) return false;
+        break;
+      case 6:
+        if (!getWechat()
+            .equals(other.getWechat())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1049,6 +1231,18 @@ private static final long serialVersionUID = 0L;
     if (hasData()) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
+    }
+    switch (otherContactCase_) {
+      case 5:
+        hash = (37 * hash) + QQ_FIELD_NUMBER;
+        hash = (53 * hash) + getQq().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + WECHAT_FIELD_NUMBER;
+        hash = (53 * hash) + getWechat().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1193,6 +1387,8 @@ private static final long serialVersionUID = 0L;
         dataBuilder_.dispose();
         dataBuilder_ = null;
       }
+      otherContactCase_ = 0;
+      otherContact_ = null;
       return this;
     }
 
@@ -1221,6 +1417,7 @@ private static final long serialVersionUID = 0L;
       com.power.proto3.PeopleInfo result = new com.power.proto3.PeopleInfo(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) { buildPartial0(result); }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -1250,6 +1447,11 @@ private static final long serialVersionUID = 0L;
             ? data_
             : dataBuilder_.build();
       }
+    }
+
+    private void buildPartialOneofs(com.power.proto3.PeopleInfo result) {
+      result.otherContactCase_ = otherContactCase_;
+      result.otherContact_ = this.otherContact_;
     }
 
     @java.lang.Override
@@ -1333,6 +1535,23 @@ private static final long serialVersionUID = 0L;
       if (other.hasData()) {
         mergeData(other.getData());
       }
+      switch (other.getOtherContactCase()) {
+        case QQ: {
+          otherContactCase_ = 5;
+          otherContact_ = other.otherContact_;
+          onChanged();
+          break;
+        }
+        case WECHAT: {
+          otherContactCase_ = 6;
+          otherContact_ = other.otherContact_;
+          onChanged();
+          break;
+        }
+        case OTHERCONTACT_NOT_SET: {
+          break;
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1389,6 +1608,18 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000008;
               break;
             } // case 34
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              otherContactCase_ = 5;
+              otherContact_ = s;
+              break;
+            } // case 42
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+              otherContactCase_ = 6;
+              otherContact_ = s;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1404,6 +1635,21 @@ private static final long serialVersionUID = 0L;
       } // finally
       return this;
     }
+    private int otherContactCase_ = 0;
+    private java.lang.Object otherContact_;
+    public OtherContactCase
+        getOtherContactCase() {
+      return OtherContactCase.forNumber(
+          otherContactCase_);
+    }
+
+    public Builder clearOtherContact() {
+      otherContactCase_ = 0;
+      otherContact_ = null;
+      onChanged();
+      return this;
+    }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
@@ -1867,6 +2113,216 @@ private static final long serialVersionUID = 0L;
         data_ = null;
       }
       return dataBuilder_;
+    }
+
+    /**
+     * <pre>
+     *    repeated string qq = 5;
+     * </pre>
+     *
+     * <code>string qq = 5;</code>
+     * @return Whether the qq field is set.
+     */
+    @java.lang.Override
+    public boolean hasQq() {
+      return otherContactCase_ == 5;
+    }
+    /**
+     * <pre>
+     *    repeated string qq = 5;
+     * </pre>
+     *
+     * <code>string qq = 5;</code>
+     * @return The qq.
+     */
+    @java.lang.Override
+    public java.lang.String getQq() {
+      java.lang.Object ref = "";
+      if (otherContactCase_ == 5) {
+        ref = otherContact_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (otherContactCase_ == 5) {
+          otherContact_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     *    repeated string qq = 5;
+     * </pre>
+     *
+     * <code>string qq = 5;</code>
+     * @return The bytes for qq.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getQqBytes() {
+      java.lang.Object ref = "";
+      if (otherContactCase_ == 5) {
+        ref = otherContact_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (otherContactCase_ == 5) {
+          otherContact_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     *    repeated string qq = 5;
+     * </pre>
+     *
+     * <code>string qq = 5;</code>
+     * @param value The qq to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQq(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      otherContactCase_ = 5;
+      otherContact_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *    repeated string qq = 5;
+     * </pre>
+     *
+     * <code>string qq = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearQq() {
+      if (otherContactCase_ == 5) {
+        otherContactCase_ = 0;
+        otherContact_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     *    repeated string qq = 5;
+     * </pre>
+     *
+     * <code>string qq = 5;</code>
+     * @param value The bytes for qq to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQqBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      otherContactCase_ = 5;
+      otherContact_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     * <code>string wechat = 6;</code>
+     * @return Whether the wechat field is set.
+     */
+    @java.lang.Override
+    public boolean hasWechat() {
+      return otherContactCase_ == 6;
+    }
+    /**
+     * <code>string wechat = 6;</code>
+     * @return The wechat.
+     */
+    @java.lang.Override
+    public java.lang.String getWechat() {
+      java.lang.Object ref = "";
+      if (otherContactCase_ == 6) {
+        ref = otherContact_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (otherContactCase_ == 6) {
+          otherContact_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string wechat = 6;</code>
+     * @return The bytes for wechat.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getWechatBytes() {
+      java.lang.Object ref = "";
+      if (otherContactCase_ == 6) {
+        ref = otherContact_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        if (otherContactCase_ == 6) {
+          otherContact_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string wechat = 6;</code>
+     * @param value The wechat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWechat(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      otherContactCase_ = 6;
+      otherContact_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string wechat = 6;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWechat() {
+      if (otherContactCase_ == 6) {
+        otherContactCase_ = 0;
+        otherContact_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>string wechat = 6;</code>
+     * @param value The bytes for wechat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWechatBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      otherContactCase_ = 6;
+      otherContact_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

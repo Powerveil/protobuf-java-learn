@@ -63,4 +63,52 @@ public interface PeopleInfoOrBuilder extends
    * <code>.google.protobuf.Any data = 4;</code>
    */
   com.google.protobuf.AnyOrBuilder getDataOrBuilder();
+
+  /**
+   * <pre>
+   *    repeated string qq = 5;
+   * </pre>
+   *
+   * <code>string qq = 5;</code>
+   * @return Whether the qq field is set.
+   */
+  boolean hasQq();
+  /**
+   * <pre>
+   *    repeated string qq = 5;
+   * </pre>
+   *
+   * <code>string qq = 5;</code>
+   * @return The qq.
+   */
+  java.lang.String getQq();
+  /**
+   * <pre>
+   *    repeated string qq = 5;
+   * </pre>
+   *
+   * <code>string qq = 5;</code>
+   * @return The bytes for qq.
+   */
+  com.google.protobuf.ByteString
+      getQqBytes();
+
+  /**
+   * <code>string wechat = 6;</code>
+   * @return Whether the wechat field is set.
+   */
+  boolean hasWechat();
+  /**
+   * <code>string wechat = 6;</code>
+   * @return The wechat.
+   */
+  java.lang.String getWechat();
+  /**
+   * <code>string wechat = 6;</code>
+   * @return The bytes for wechat.
+   */
+  com.google.protobuf.ByteString
+      getWechatBytes();
+
+  public com.power.proto3.PeopleInfo.OtherContactCase getOtherContactCase();
 }

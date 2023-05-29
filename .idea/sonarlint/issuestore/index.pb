@@ -14,7 +14,5 @@ S
 ,src/main/java/com/power/proto3/Contacts.java,c\2\c2745e4a69c20ae4c69d520e7a5e148d48d88f9d
 e
 5src/main/java/com/power/proto3/ContactsOrBuilder.java,a\b\abac5febf816a13917ce6b011072f66ac8602233
-g
-7src/main/java/com/power/proto3/PeopleInfoOrBuilder.java,c\e\ce81da84fad1258e2f00fb47521ebb8d15d421aa
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec

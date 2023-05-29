@@ -97,6 +97,21 @@ public class TestWrite {
         builder.setData(Any.pack(addressBuilder.build()));
 
 
+        System.out.print("请选择要添加的其他联系方式(1、qq号   2、微信号)：");
+        int otherContact = Integer.parseInt(scanner.nextLine());
+        if (1 == otherContact) {
+            System.out.print("请输入qq号：");
+            String qq = scanner.nextLine();
+            builder.setQq(qq);
+        }else if (2 == otherContact) {
+            System.out.print("请输入微信号：");
+            String wechat = scanner.nextLine();
+            builder.setWechat(wechat);
+        } else {
+            System.out.println("无效选择，设置失败！");
+        }
+
+
         System.out.println("------------添加联系人成功------------");
 
         return builder.build();
