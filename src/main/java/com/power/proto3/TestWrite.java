@@ -1,5 +1,7 @@
 package com.power.proto3;
 
+import com.google.protobuf.Any;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -80,6 +82,20 @@ public class TestWrite {
             builder.addPhone(phoneBuilder);
 //            builder.setPhone(i, PeopleInfo.Phone.newBuilder().setNumber(phone));
         }
+
+        Address.Builder addressBuilder = Address.newBuilder();
+        System.out.print("请输入联系人家庭地址：");
+        String homeAddress = scanner.nextLine();
+        addressBuilder.setHomeAddress(homeAddress);
+
+
+        System.out.print("请输入联系人单位地址：");
+        String unitAddress = scanner.nextLine();
+        addressBuilder.setUnitAddress(unitAddress);
+
+
+        builder.setData(Any.pack(addressBuilder.build()));
+
 
         System.out.println("------------添加联系人成功------------");
 

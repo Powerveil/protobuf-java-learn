@@ -925,6 +925,32 @@ private static final long serialVersionUID = 0L;
     return phone_.get(index);
   }
 
+  public static final int DATA_FIELD_NUMBER = 4;
+  private com.google.protobuf.Any data_;
+  /**
+   * <code>.google.protobuf.Any data = 4;</code>
+   * @return Whether the data field is set.
+   */
+  @java.lang.Override
+  public boolean hasData() {
+    return data_ != null;
+  }
+  /**
+   * <code>.google.protobuf.Any data = 4;</code>
+   * @return The data.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Any getData() {
+    return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+  }
+  /**
+   * <code>.google.protobuf.Any data = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.AnyOrBuilder getDataOrBuilder() {
+    return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -948,6 +974,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < phone_.size(); i++) {
       output.writeMessage(3, phone_.get(i));
     }
+    if (data_ != null) {
+      output.writeMessage(4, getData());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -967,6 +996,10 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < phone_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, phone_.get(i));
+    }
+    if (data_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getData());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -989,6 +1022,11 @@ private static final long serialVersionUID = 0L;
         != other.getAge()) return false;
     if (!getPhoneList()
         .equals(other.getPhoneList())) return false;
+    if (hasData() != other.hasData()) return false;
+    if (hasData()) {
+      if (!getData()
+          .equals(other.getData())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1007,6 +1045,10 @@ private static final long serialVersionUID = 0L;
     if (getPhoneCount() > 0) {
       hash = (37 * hash) + PHONE_FIELD_NUMBER;
       hash = (53 * hash) + getPhoneList().hashCode();
+    }
+    if (hasData()) {
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1146,6 +1188,11 @@ private static final long serialVersionUID = 0L;
         phoneBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000004);
+      data_ = null;
+      if (dataBuilder_ != null) {
+        dataBuilder_.dispose();
+        dataBuilder_ = null;
+      }
       return this;
     }
 
@@ -1197,6 +1244,11 @@ private static final long serialVersionUID = 0L;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.age_ = age_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.data_ = dataBuilder_ == null
+            ? data_
+            : dataBuilder_.build();
       }
     }
 
@@ -1278,6 +1330,9 @@ private static final long serialVersionUID = 0L;
           }
         }
       }
+      if (other.hasData()) {
+        mergeData(other.getData());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1327,6 +1382,13 @@ private static final long serialVersionUID = 0L;
               }
               break;
             } // case 26
+            case 34: {
+              input.readMessage(
+                  getDataFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1686,6 +1748,125 @@ private static final long serialVersionUID = 0L;
         phone_ = null;
       }
       return phoneBuilder_;
+    }
+
+    private com.google.protobuf.Any data_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> dataBuilder_;
+    /**
+     * <code>.google.protobuf.Any data = 4;</code>
+     * @return Whether the data field is set.
+     */
+    public boolean hasData() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Any data = 4;</code>
+     * @return The data.
+     */
+    public com.google.protobuf.Any getData() {
+      if (dataBuilder_ == null) {
+        return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+      } else {
+        return dataBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public Builder setData(com.google.protobuf.Any value) {
+      if (dataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        data_ = value;
+      } else {
+        dataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public Builder setData(
+        com.google.protobuf.Any.Builder builderForValue) {
+      if (dataBuilder_ == null) {
+        data_ = builderForValue.build();
+      } else {
+        dataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public Builder mergeData(com.google.protobuf.Any value) {
+      if (dataBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0) &&
+          data_ != null &&
+          data_ != com.google.protobuf.Any.getDefaultInstance()) {
+          getDataBuilder().mergeFrom(value);
+        } else {
+          data_ = value;
+        }
+      } else {
+        dataBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public Builder clearData() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      data_ = null;
+      if (dataBuilder_ != null) {
+        dataBuilder_.dispose();
+        dataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public com.google.protobuf.Any.Builder getDataBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getDataFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    public com.google.protobuf.AnyOrBuilder getDataOrBuilder() {
+      if (dataBuilder_ != null) {
+        return dataBuilder_.getMessageOrBuilder();
+      } else {
+        return data_ == null ?
+            com.google.protobuf.Any.getDefaultInstance() : data_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Any data = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+        getDataFieldBuilder() {
+      if (dataBuilder_ == null) {
+        dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                getData(),
+                getParentForChildren(),
+                isClean());
+        data_ = null;
+      }
+      return dataBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

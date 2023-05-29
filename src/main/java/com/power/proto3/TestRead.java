@@ -1,5 +1,7 @@
 package com.power.proto3;
 
+import com.google.protobuf.InvalidProtocolBufferException;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -22,7 +24,7 @@ public class TestRead {
 //        System.out.println(contacts.toString());
     }
 
-    private static void printContacts(Contacts contacts) {
+    private static void printContacts(Contacts contacts) throws InvalidProtocolBufferException {
         int i = 1;
         for (PeopleInfo peopleInfo : contacts.getContactsList()) {
             System.out.println("----------联系人" + i++ + "------------");
@@ -33,6 +35,18 @@ public class TestRead {
             for (PeopleInfo.Phone phone : peopleInfo.getPhoneList()) {
                 System.out.println("电话" + j++ + "："+  phone.getNumber()
                     + " (" + phone.getType().name() + ")");
+            }
+
+
+            if (peopleInfo.hasData()
+                    && peopleInfo.getData().is(Address.class)) {
+                Address address = peopleInfo.getData().unpack(Address.class);
+                if (!address.getHomeAddress().isEmpty()) {
+                    System.out.println("家庭地址：" + address.getHomeAddress());
+                }
+                if (!address.getUnitAddress().isEmpty()) {
+                    System.out.println("单位地址：" + address.getUnitAddress());
+                }
             }
         }
 

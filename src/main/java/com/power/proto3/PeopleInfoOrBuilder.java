@@ -48,4 +48,19 @@ public interface PeopleInfoOrBuilder extends
    */
   com.power.proto3.PeopleInfo.PhoneOrBuilder getPhoneOrBuilder(
       int index);
+
+  /**
+   * <code>.google.protobuf.Any data = 4;</code>
+   * @return Whether the data field is set.
+   */
+  boolean hasData();
+  /**
+   * <code>.google.protobuf.Any data = 4;</code>
+   * @return The data.
+   */
+  com.google.protobuf.Any getData();
+  /**
+   * <code>.google.protobuf.Any data = 4;</code>
+   */
+  com.google.protobuf.AnyOrBuilder getDataOrBuilder();
 }
