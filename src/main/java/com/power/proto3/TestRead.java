@@ -5,6 +5,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Map;
 
 /**
  * @author power
@@ -69,6 +70,10 @@ public class TestRead {
                     break;
             }
 
+            Map<String, String> remarkMap = peopleInfo.getRemarkMap();
+            for (Map.Entry<String, String> entry : remarkMap.entrySet()) {
+                System.out.println("   " + entry.getKey() + "：" +  entry.getValue());
+            }
         }
 
     }

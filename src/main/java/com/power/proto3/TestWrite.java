@@ -111,6 +111,19 @@ public class TestWrite {
             System.out.println("无效选择，设置失败！");
         }
 
+        for (int i = 0; ; i++) {
+            System.out.print("请输入备注" + (i + 1) + "标题(只输入回车完成备注新增)：");
+            String key = scanner.nextLine();
+            if (key.isEmpty()) {
+                break;
+            }
+
+            System.out.print("请输入备注内容：");
+            String value = scanner.nextLine();
+
+            builder.putRemark(key, value);
+        }
+
 
         System.out.println("------------添加联系人成功------------");
 

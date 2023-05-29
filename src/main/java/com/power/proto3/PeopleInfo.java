@@ -37,6 +37,18 @@ private static final long serialVersionUID = 0L;
     return com.power.proto3.ContactsProtos.internal_static_proto3_PeopleInfo_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(
+      int number) {
+    switch (number) {
+      case 7:
+        return internalGetRemark();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -1108,6 +1120,109 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int REMARK_FIELD_NUMBER = 7;
+  private static final class RemarkDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.power.proto3.ContactsProtos.internal_static_proto3_PeopleInfo_RemarkEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> remark_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetRemark() {
+    if (remark_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          RemarkDefaultEntryHolder.defaultEntry);
+    }
+    return remark_;
+  }
+  public int getRemarkCount() {
+    return internalGetRemark().getMap().size();
+  }
+  /**
+   * <pre>
+   * key:除了 float bytes 之外的任意标量类型
+   *  repeated map&lt;string, string&gt; remark = 7;
+   * 无序
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; remark = 7;</code>
+   */
+  @java.lang.Override
+  public boolean containsRemark(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetRemark().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getRemarkMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getRemark() {
+    return getRemarkMap();
+  }
+  /**
+   * <pre>
+   * key:除了 float bytes 之外的任意标量类型
+   *  repeated map&lt;string, string&gt; remark = 7;
+   * 无序
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; remark = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getRemarkMap() {
+    return internalGetRemark().getMap();
+  }
+  /**
+   * <pre>
+   * key:除了 float bytes 之外的任意标量类型
+   *  repeated map&lt;string, string&gt; remark = 7;
+   * 无序
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; remark = 7;</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getRemarkOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetRemark().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <pre>
+   * key:除了 float bytes 之外的任意标量类型
+   *  repeated map&lt;string, string&gt; remark = 7;
+   * 无序
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; remark = 7;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getRemarkOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetRemark().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1140,6 +1255,12 @@ private static final long serialVersionUID = 0L;
     if (otherContactCase_ == 6) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, otherContact_);
     }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetRemark(),
+        RemarkDefaultEntryHolder.defaultEntry,
+        7);
     getUnknownFields().writeTo(output);
   }
 
@@ -1170,6 +1291,16 @@ private static final long serialVersionUID = 0L;
     if (otherContactCase_ == 6) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, otherContact_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetRemark().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      remark__ = RemarkDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, remark__);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1196,6 +1327,8 @@ private static final long serialVersionUID = 0L;
       if (!getData()
           .equals(other.getData())) return false;
     }
+    if (!internalGetRemark().equals(
+        other.internalGetRemark())) return false;
     if (!getOtherContactCase().equals(other.getOtherContactCase())) return false;
     switch (otherContactCase_) {
       case 5:
@@ -1231,6 +1364,10 @@ private static final long serialVersionUID = 0L;
     if (hasData()) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
       hash = (53 * hash) + getData().hashCode();
+    }
+    if (!internalGetRemark().getMap().isEmpty()) {
+      hash = (37 * hash) + REMARK_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetRemark().hashCode();
     }
     switch (otherContactCase_) {
       case 5:
@@ -1351,6 +1488,28 @@ private static final long serialVersionUID = 0L;
       return com.power.proto3.ContactsProtos.internal_static_proto3_PeopleInfo_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetRemark();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetMutableRemark();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1387,6 +1546,7 @@ private static final long serialVersionUID = 0L;
         dataBuilder_.dispose();
         dataBuilder_ = null;
       }
+      internalGetMutableRemark().clear();
       otherContactCase_ = 0;
       otherContact_ = null;
       return this;
@@ -1446,6 +1606,10 @@ private static final long serialVersionUID = 0L;
         result.data_ = dataBuilder_ == null
             ? data_
             : dataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.remark_ = internalGetRemark();
+        result.remark_.makeImmutable();
       }
     }
 
@@ -1535,6 +1699,9 @@ private static final long serialVersionUID = 0L;
       if (other.hasData()) {
         mergeData(other.getData());
       }
+      internalGetMutableRemark().mergeFrom(
+          other.internalGetRemark());
+      bitField0_ |= 0x00000040;
       switch (other.getOtherContactCase()) {
         case QQ: {
           otherContactCase_ = 5;
@@ -1620,6 +1787,15 @@ private static final long serialVersionUID = 0L;
               otherContact_ = s;
               break;
             } // case 50
+            case 58: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              remark__ = input.readMessage(
+                  RemarkDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableRemark().getMutableMap().put(
+                  remark__.getKey(), remark__.getValue());
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 58
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2322,6 +2498,175 @@ private static final long serialVersionUID = 0L;
       otherContactCase_ = 6;
       otherContact_ = value;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> remark_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetRemark() {
+      if (remark_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            RemarkDefaultEntryHolder.defaultEntry);
+      }
+      return remark_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableRemark() {
+      if (remark_ == null) {
+        remark_ = com.google.protobuf.MapField.newMapField(
+            RemarkDefaultEntryHolder.defaultEntry);
+      }
+      if (!remark_.isMutable()) {
+        remark_ = remark_.copy();
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return remark_;
+    }
+    public int getRemarkCount() {
+      return internalGetRemark().getMap().size();
+    }
+    /**
+     * <pre>
+     * key:除了 float bytes 之外的任意标量类型
+     *  repeated map&lt;string, string&gt; remark = 7;
+     * 无序
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; remark = 7;</code>
+     */
+    @java.lang.Override
+    public boolean containsRemark(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetRemark().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getRemarkMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getRemark() {
+      return getRemarkMap();
+    }
+    /**
+     * <pre>
+     * key:除了 float bytes 之外的任意标量类型
+     *  repeated map&lt;string, string&gt; remark = 7;
+     * 无序
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; remark = 7;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getRemarkMap() {
+      return internalGetRemark().getMap();
+    }
+    /**
+     * <pre>
+     * key:除了 float bytes 之外的任意标量类型
+     *  repeated map&lt;string, string&gt; remark = 7;
+     * 无序
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; remark = 7;</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getRemarkOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetRemark().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * key:除了 float bytes 之外的任意标量类型
+     *  repeated map&lt;string, string&gt; remark = 7;
+     * 无序
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; remark = 7;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getRemarkOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetRemark().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    public Builder clearRemark() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      internalGetMutableRemark().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <pre>
+     * key:除了 float bytes 之外的任意标量类型
+     *  repeated map&lt;string, string&gt; remark = 7;
+     * 无序
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; remark = 7;</code>
+     */
+    public Builder removeRemark(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableRemark().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+        getMutableRemark() {
+      bitField0_ |= 0x00000040;
+      return internalGetMutableRemark().getMutableMap();
+    }
+    /**
+     * <pre>
+     * key:除了 float bytes 之外的任意标量类型
+     *  repeated map&lt;string, string&gt; remark = 7;
+     * 无序
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; remark = 7;</code>
+     */
+    public Builder putRemark(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutableRemark().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+    /**
+     * <pre>
+     * key:除了 float bytes 之外的任意标量类型
+     *  repeated map&lt;string, string&gt; remark = 7;
+     * 无序
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; remark = 7;</code>
+     */
+    public Builder putAllRemark(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableRemark().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00000040;
       return this;
     }
     @java.lang.Override

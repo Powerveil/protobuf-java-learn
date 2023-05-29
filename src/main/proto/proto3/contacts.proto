@@ -38,6 +38,11 @@ message PeopleInfo {
     string wechat = 6;
   }
 
+  // key:除了 float bytes 之外的任意标量类型
+//  repeated map<string, string> remark = 7;
+  // 无序
+  map<string, string> remark = 7; // 备注
+
 }
 
 message Contacts {

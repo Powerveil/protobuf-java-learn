@@ -110,5 +110,69 @@ public interface PeopleInfoOrBuilder extends
   com.google.protobuf.ByteString
       getWechatBytes();
 
+  /**
+   * <pre>
+   * key:除了 float bytes 之外的任意标量类型
+   *  repeated map&lt;string, string&gt; remark = 7;
+   * 无序
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; remark = 7;</code>
+   */
+  int getRemarkCount();
+  /**
+   * <pre>
+   * key:除了 float bytes 之外的任意标量类型
+   *  repeated map&lt;string, string&gt; remark = 7;
+   * 无序
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; remark = 7;</code>
+   */
+  boolean containsRemark(
+      java.lang.String key);
+  /**
+   * Use {@link #getRemarkMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getRemark();
+  /**
+   * <pre>
+   * key:除了 float bytes 之外的任意标量类型
+   *  repeated map&lt;string, string&gt; remark = 7;
+   * 无序
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; remark = 7;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getRemarkMap();
+  /**
+   * <pre>
+   * key:除了 float bytes 之外的任意标量类型
+   *  repeated map&lt;string, string&gt; remark = 7;
+   * 无序
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; remark = 7;</code>
+   */
+  /* nullable */
+java.lang.String getRemarkOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * key:除了 float bytes 之外的任意标量类型
+   *  repeated map&lt;string, string&gt; remark = 7;
+   * 无序
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; remark = 7;</code>
+   */
+  java.lang.String getRemarkOrThrow(
+      java.lang.String key);
+
   public com.power.proto3.PeopleInfo.OtherContactCase getOtherContactCase();
 }
